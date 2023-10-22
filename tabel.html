@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resmi Adha Putro Wicaksono</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<!-- Header -->
+<div style="background-color: #4CAF50; color: white; text-align: center; padding: 1rem; box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="width: 70px; height: 70px; background-color: #fff; border-radius: 50%; overflow: hidden; margin-right: 20px;">
+            <img src="logo.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <h1 style="margin: 0; font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Website Resmi Adha Putro Wicaksono
+    </div>
+</div>
+
+<!-- Body -->
+<div style="display: flex; padding: 20px;">
+
+    <!-- Sidebar -->
+    <div style="width: 250px; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); ">
+        <h2 style="margin-top: 0; font-size: 1.5em; color: #4CAF50;">Daftar Tabel Mahasiswa</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="text-decoration: none; color: #4CAF50; font-size: 1.2em;">Halaman Utama</a></li>
+            <li style="margin-bottom: 10px;"><a href="form.html" style="text-decoration: none; color: #4CAF50; font-size: 1.2em;">Formulir Pendaftaran</a></li>
+            <li><a href="tabel.html" style="text-decoration: none; color: #4CAF50; font-size: 1.2em;">Daftar Mahasiswa</a></li>
+        </ul>
+    </div>
+
+
+        <!-- Main Content (Tabel) -->
+        <div style="flex: 1; padding: 20px;">
+            <h2 style="margin-top: 20px;text-align: center;">Daftar Mahasiswa</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+
+    <main>
+            <table id="mahasiswaTable">            
+                <tr style="background-color: #4CAF50; color: white;">
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Nama</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">NIM</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Program Studi</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Email</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Jenis Kelamin</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Tanggal Lahir</th>
+                    <th style="border: 1px solid #333; padding: 12px; background-color: #4CAF50;">Alamat</th>
+                </tr>
+                <tr style="background-color: #f1f1f1;">
+                 
+         
+            </table>
+                </tr>
+                <tr style="background-color: #ffffff;">
+                  
+                </tr>
+               
+                <script>
+                    // Mengambil nilai dari query string
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const nama = urlParams.get('nama');
+                    const nim = urlParams.get('nim');
+                    const prodi = urlParams.get('prodi');
+                    const email = urlParams.get('email');
+                    const jk = urlParams.get('jk');
+                    const tgl_lahir = urlParams.get('tgl_lahir');
+                    const alamat = urlParams.get('alamat');
+        
+                    // Menambahkan data ke dalam tabel
+                    const table = document.getElementById('mahasiswaTable');
+                    const newRow = table.insertRow(1); // Menyisipkan baris di bawah header
+        
+                    // Menambahkan sel-sel ke dalam baris
+                    const cells = [
+                        newRow.insertCell(0),
+                        newRow.insertCell(1),
+                        newRow.insertCell(2),
+                        newRow.insertCell(3),
+                        newRow.insertCell(4),
+                        newRow.insertCell(5),
+                        newRow.insertCell(6)
+                    ];
+        
+                    // Mengisi sel-sel dengan nilai dari query string
+                    cells[0].innerHTML = nama;
+                    cells[1].innerHTML = nim;
+                    cells[2].innerHTML = prodi;
+                    cells[3].innerHTML = email;
+                    cells[4].innerHTML = jk;
+                    cells[5].innerHTML = tgl_lahir;
+                    cells[6].innerHTML = alamat;
+
+                    Array.from(document.querySelectorAll('th, td')).forEach(cell => {
+            cell.style.textAlign = 'center';
+        });
+                </script>
+            </main>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #4CAF50; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%;">
+        <p style="margin: 0;">&copy; Hak Cipta 2023 - Website Mahasiswa</p>
+    </div>
+
+</body>
+
+</html>
